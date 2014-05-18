@@ -106,7 +106,7 @@ NAVIGATION_LINKS = {
         ('/archive.html', '归档', 'icon-folder-open-alt'),
         ('/categories/index.html', '标签', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
-        ('http://weibo.com/joveyu','Weibo', 'icon-weibo'),
+        ('http://weibo.com/joveyu', 'Weibo', 'icon-weibo'),
         ('https://github.com/JoveYu', 'Github', 'icon-github'),
     )
 }
