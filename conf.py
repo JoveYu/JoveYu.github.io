@@ -25,6 +25,7 @@ SITE_URL = "http://jovesky.com"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://jovesky.com"
+#BASE_URL = "http://jovesky.com/"
 BLOG_EMAIL = "yushijun110@gmail.com"
 BLOG_DESCRIPTION = "I love what I do"  # (translatable)
 
@@ -91,16 +92,28 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 # Links for the sidebar / navigation bar.
 # You should provide a key-value pair for each used language.
 # (the same way you would do with a (translatable) setting.)
+#NAVIGATION_LINKS = {
+    #DEFAULT_LANG: (
+        #("/archive.html", "文章存档"),
+        #("/categories/index.html", "标签"),
+        #("/rss.xml", "RSS"),
+    #),
+#}
+
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "文章存档"),
-        ("/categories/index.html", "标签"),
-        ("/rss.xml", "RSS"),
-    ),
+        ('/index.html', '主页', 'icon-home'),
+        ('/archive.html', '归档', 'icon-folder-open-alt'),
+        ('/categories/index.html', '标签', 'icon-tags'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
+        ('http://weibo.com/joveyu','Weibo', 'icon-weibo'),
+        ('https://github.com/JoveYu', 'Github', 'icon-github'),
+    )
 }
 
+
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "zen"
 
 # Below this point, everything is optional
 
@@ -160,8 +173,8 @@ FORCE_ISO8601 = True
 #
 
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
 )
 PAGES = (
@@ -385,6 +398,7 @@ GITHUB_DEPLOY_BRANCH = 'gitcafe-pages'
 # Can be any of autumn borland bw colorful default emacs friendly fruity manni
 # monokai murphy native pastie perldoc rrt tango trac vim vs
 # CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'monokai'
 
 # If you use 'site-reveal' theme you can select several subthemes
 # THEME_REVEAL_CONFIG_SUBTHEME = 'sky'
@@ -405,6 +419,7 @@ GITHUB_DEPLOY_BRANCH = 'gitcafe-pages'
 
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -425,7 +440,11 @@ RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_rea
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
+LICENSE = """
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 # I recommend using the Creative Commons' wizard:
 # http://creativecommons.org/choose/
 # LICENSE = """
@@ -586,6 +605,11 @@ COMMENT_SYSTEM_ID = "jovesky"
 # <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
 # <!-- End of social buttons -->
 # """
+SOCIAL_BUTTONS_CODE = """
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1399099748789873&move=0&amp;btn=r2.gif" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+"""
 
 # Show link to source for the posts?
 # Formerly known as HIDE_SOURCELINK (inverse)
@@ -593,10 +617,12 @@ COMMENT_SYSTEM_ID = "jovesky"
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
 # COPY_SOURCES = True
+SHOW_SOURCELINK = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
 # INDEX_DISPLAY_POST_COUNT = 10
+INDEX_DISPLAY_POST_COUNT = 5
 
 # By default, Nikola generates RSS files for the website and for tags.
 # Set this to False to disable all that.
