@@ -11,6 +11,8 @@
 django中提供便捷的分页服务，主要通过
 Pagination来实现的，详细可以参考[Django文档][1]，通过简单设立每页显示的数量，来自动化获得分页object_list，先来看看调用方式，借用文档里面的例子：
 
+<!-- TEASER_END -->
+
 ```python
 >>> from django.core.paginator import Paginator
 >>> objects = ['john', 'paul', 'george', 'ringo']
