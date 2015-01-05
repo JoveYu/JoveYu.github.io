@@ -25,7 +25,7 @@ SITE_URL = "http://jovesky.com"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://jovesky.com"
-#BASE_URL = "http://jovesky.com/"
+BASE_URL = "http://jovesky.com/"
 BLOG_EMAIL = "yushijun110@gmail.com"
 BLOG_DESCRIPTION = "I love what I do"  # (translatable)
 
